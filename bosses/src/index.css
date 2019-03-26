@@ -35,3 +35,23 @@ body {
   border-bottom: solid 2px;
   border-color: #ac05ff;
 }
+
+.bosses-container {
+  border: solid;
+  display: flex;
+  height: 650px;
+}
+
+.bosses-list {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  overflow: scroll;
+  width: 65%;
+}
+
+.bosses-input {
+  border: solid;
+  width: 35%;
+}
