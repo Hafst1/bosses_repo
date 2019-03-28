@@ -1,4 +1,4 @@
-import { UPDATE_USER } from '../constants';
+import { UPDATE_BOSS } from '../constants';
 
 const initialState = {
     name: '',
@@ -8,7 +8,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case UPDATE_USER: return action.payload;
+        case UPDATE_BOSS: return action.payload;
         default: return state;
     };
 };

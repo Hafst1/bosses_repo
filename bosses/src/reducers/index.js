@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import user from './userReducer';
+import boss from './bossReducer';
 
 export default combineReducers({
     // This is the Redux store state structure
-    user
+    boss
 });

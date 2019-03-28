@@ -12,6 +12,7 @@ body {
   border-bottom: solid 5px;
   border-color: #ac05ff;
   display: flex;
+  align-items: flex-end;
   height: 80px;
   width: 100%;
   background-color: #242526;
@@ -19,9 +20,9 @@ body {
 
 .navlinks {
   display: flex;
-  align-items: flex-end;
   list-style: none;
   padding-left: 80px;
+  margin-bottom: 5px;
 }
 
 .navlinks a {
@@ -36,14 +37,19 @@ body {
   border-color: #ac05ff;
 }
 
+.welcome {
+  margin-top: 30px;
+}
+
 .bosses-container {
-  border: solid;
+  /* border: solid; */
   display: flex;
-  height: 650px;
+  margin-top: 30px;
+  height: 625px;
 }
 
 .bosses-list {
-  border: solid;
+  /* border: solid; */
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -52,6 +58,16 @@ body {
 }
 
 .bosses-input {
-  border: solid;
+  border-left: solid;
+  border-width: thin;
+  padding: 15px 0px 0px 20px;
   width: 35%;
+}
+
+.bosses-input h4 {
+  margin-bottom: 20px;
+}
+
+.bosses-input .btn-success {
+  margin-top: 30px;
 }
