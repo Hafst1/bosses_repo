@@ -17,14 +17,7 @@ import bossService from '../services/bossService';
 
 export const getBosses = () => {
     return (dispatch) => {
-        return bossService.getBosses().then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            else {
-                dispatch(getBossesFromServerFailed(response.status));
-            }
-        }).then(bossesInfo => {
+        return bossService.getBosses().then(bossesInfo => {
             if (bossesInfo) {
                 dispatch(getBossesFromServerSuccess(bossesInfo));
             }
@@ -32,7 +25,7 @@ export const getBosses = () => {
     };
 };
 
-getBossesSuccess = (bossesInfo) => {
+const getBossesFromServerSuccess = (bossesInfo) => {
     return {
         type: 'GET_BOSSES',
         payload: bossesInfo
@@ -45,9 +38,9 @@ export const createBoss = () => {
             if (response.ok) {
                 return response.json();
             }
-            else {
-                dispatch(createBossFailed(response.status));
-            }
+            // else {
+            //     dispatch(createBossFailed(response.status));
+            // }
         }).then(newBoss => {
             if (newBoss) {
                 dispatch(createBossSuccess(newBoss));
@@ -56,7 +49,7 @@ export const createBoss = () => {
     };
 };
 
-createBossSuccess = (newBoss) => {
+const createBossSuccess = (newBoss) => {
     return {
         type: 'CREATE_BOSS',
         payload: newBoss

@@ -5,19 +5,23 @@ import Home from './components/Home/Home';
 import Bosses from './components/Bosses/Bosses';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <NavigationBar />
-        <div className="app-body">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/bosses" component={Bosses} />
-          </Switch>
-        </div>
-      </div>
-    );
-  };
+    componentDidMount() {
+        this.props.getBosses();
+    }
+    render() {
+        return (
+            <div className="app">
+                {console.log(this.props)}
+                <NavigationBar />
+                <div className="app-body">
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/bosses" component={Bosses} />
+                    </Switch>
+                </div>
+            </div>
+        );
+    };
 };
 
 export default App;

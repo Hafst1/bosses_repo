@@ -2,6 +2,7 @@ import React from 'react';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
 import { connect } from 'react-redux';
+import ListView from '../ListView/ListView';
 
 class Bosses extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Bosses extends React.Component {
             errors: {
                 nameError: '',
                 descriptionError: '',
-                urlError
+                urlError: ''
             }
         };
     };
@@ -53,6 +54,7 @@ class Bosses extends React.Component {
             <div className="bosses-container">
                 <div className="bosses-list">
                     <p>List of Bosses..</p>
+                    <ListView />
                 </div>
                 <div className="bosses-input">
                     <h4>CREATE NEW BOSS</h4>
@@ -65,7 +67,7 @@ class Bosses extends React.Component {
                             value= { name }
                             htmlId="name"
                             label="NAME:"
-                            errorMessage={ nameError } />
+                            /*errorMessage={ nameError }*/ />
                         {/* Description */}
                         <Input
                             type="text"
@@ -74,7 +76,7 @@ class Bosses extends React.Component {
                             value= { description }
                             htmlId="description"
                             label="DESCRIPTION:" 
-                            errorMessage={ descriptionError } />
+                            /*errorMessage={ descriptionError }*/ />
                         {/* URL */}
                         <Input
                             type="file"
@@ -83,7 +85,7 @@ class Bosses extends React.Component {
                             value= { url }
                             htmlId="url"
                             label="IMAGE URL:" 
-                            errorMessage={ urlError } />
+                            /*errorMessage={ urlError }*/ />
                         <input type="submit" value="CREATE" className="btn btn-success btn-block" />
                     </Form>
                 </div>
