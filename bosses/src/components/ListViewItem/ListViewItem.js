@@ -4,10 +4,18 @@ import { Link } from 'react-router-dom';
 
 const ListViewItem = ({boss}) => {
      return (
-        <div>
-            <p>{boss.name}</p>
-            <p>{boss.description}</p>
-            <img src={boss.img} />
+        <div className="list-view-item">
+            <div className="card-header">
+                <h3><Link to={`/bosses/${ boss.id }`}>{ boss.name }</Link></h3>
+            </div>
+            <div className="card-body">
+                <div className="card-image">
+                    <img src={boss.img} width="250" height="250" />
+                </div>
+                <div className="card-text">
+                    <p>{boss.description}</p>
+                </div>
+            </div>
         </div>
      );
 };

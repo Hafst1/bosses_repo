@@ -2,8 +2,13 @@ import React from 'react';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
 import ListView from '../ListView/ListView';
+import { getBoss } from '../../actions/bossActions';
+import { connect } from 'react-redux';
 
-class Bosses extends React.Component {
+class Boss extends React.Component {
+    componentDidMount() {
+        this.props.getBoss();
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -52,39 +57,51 @@ class Bosses extends React.Component {
         return (
             <div className="bosses-container">
                 <div className="bosses-list">
-                    <ListView />
+                    <li className="list-view-item">
+                        <div className="card-header">
+                            <h3>bla</h3>
+                        </div>
+                        <div className="card-body">
+                            <div className="card-image">
+                                {/* <img src={getBoss.img} width="250" height="250" /> */}
+                            </div>
+                            <div className="card-text">
+                                <p>bla</p>
+                            </div>
+                        </div>
+                    </li>
                 </div>
                 <div className="bosses-input">
-                    <h4>CREATE NEW BOSS</h4>
-                    <Form onSubmit={ e => this.onFormSubmit(e) }>
+                    <h4>UPDATE NEW BOSS</h4>
+                    <Form onSubmit={e => this.onFormSubmit(e)}>
                         {/* Name */}
                         <Input
                             type="text"
-                            onInput={ e => this.onInput(e) }
+                            onInput={e => this.onInput(e)}
                             name="name"
-                            value= { name }
+                            value={name}
                             htmlId="name"
                             label="NAME:"
                             /*errorMessage={ nameError }*/ />
                         {/* Description */}
                         <Input
                             type="text"
-                            onInput={ e => this.onInput(e) }
+                            onInput={e => this.onInput(e)}
                             name="description"
-                            value= { description }
+                            value={description}
                             htmlId="description"
-                            label="DESCRIPTION:" 
+                            label="DESCRIPTION:"
                             /*errorMessage={ descriptionError }*/ />
                         {/* URL */}
                         <Input
                             type="file"
-                            onInput={ e => this.onInput(e) }
+                            onInput={e => this.onInput(e)}
                             name="url"
-                            value= { url }
+                            value={url}
                             htmlId="url"
-                            label="IMAGE URL:" 
+                            label="IMAGE URL:"
                             /*errorMessage={ urlError }*/ />
-                        <input type="submit" value="CREATE" className="btn btn-success btn-block" />
+                        <input type="submit" value="UPDATE" className="btn btn-success btn-block" />
                     </Form>
                 </div>
             </div>
@@ -92,4 +109,4 @@ class Bosses extends React.Component {
     };
 };
 
-export default Bosses;
+export default connect(null, { getBoss })(Boss);

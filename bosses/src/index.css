@@ -71,3 +71,50 @@ body {
 .bosses-input .btn-success {
   margin-top: 30px;
 }
+
+.list-view-item {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #eee;
+  margin: 0px 30px 30px 0px;
+  list-style: none;
+}
+
+.card-body {
+  display: flex;
+  height: 350px;
+}
+
+.card-header {
+  border-bottom: solid;
+  border-bottom-width: thin;
+  padding-bottom: 5px;
+  background-color: #eee;
+}
+
+.card-header a {
+  color: #242526;
+}
+
+.card-header a:hover {
+  text-decoration: none;
+}
+
+.card-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #eee;
+  background-position: center center;
+  height: 250px;
+  width: 250px;
+  margin-right: 50px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 15px;
+  width: 60%;
+  overflow: scroll;
+}

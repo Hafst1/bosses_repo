@@ -32,6 +32,23 @@ const getBossesFromServerSuccess = (bossesInfo) => {
     };
 };
 
+export const getBoss = () => {
+    return (dispatch) => {
+        return bossService.getBoss().then(bossInfo => {
+            if (bossInfo) {
+                dispatch(getBossFromServerSuccess(bossInfo));
+            }
+        });
+    };
+};
+
+const getBossFromServerSuccess = (bossInfo) => {
+    return {
+        type: 'GET_BOSS',
+        payload: bossInfo
+    };
+};
+
 export const createBoss = () => {
     return (dispatch) => {
         return bossService.createBoss().then(response => {

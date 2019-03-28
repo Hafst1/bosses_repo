@@ -1,10 +1,12 @@
 import React from 'react';
-import ListViewItem from '../ListViewItem/ListViewItem';
 import { connect } from 'react-redux';
+import ListViewItem from '../ListViewItem/ListViewItem';
 
 const ListView = ({bosses}) => {
     return (
-        <div>{bosses.map((boss, i) => <ListViewItem key={i} boss={ boss } />)}</div>
+        <div>
+            {bosses.map((boss, i) => <ListViewItem key={i} boss={ boss } />)}
+        </div>
      );
 };
 
