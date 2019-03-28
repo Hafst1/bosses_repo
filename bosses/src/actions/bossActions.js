@@ -32,20 +32,13 @@ const getBossesFromServerSuccess = (bossesInfo) => {
     };
 };
 
-export const createBoss = () => {
+export const createBoss = (newBoss) => {
+    console.log('HELLO')
     return (dispatch) => {
-        return bossService.createBoss().then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            // else {
-            //     dispatch(createBossFailed(response.status));
-            // }
-        }).then(newBoss => {
-            if (newBoss) {
+        return bossService.createBoss(newBoss).then(resp => {
+                newBoss.Id = resp.id;
                 dispatch(createBossSuccess(newBoss));
-            }
-        });
+            })
     };
 };
 
@@ -55,4 +48,3 @@ const createBossSuccess = (newBoss) => {
         payload: newBoss
     };
 };
-

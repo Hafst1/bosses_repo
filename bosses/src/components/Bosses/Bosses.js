@@ -1,8 +1,10 @@
 import React from 'react';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
-import { connect } from 'react-redux';
 import ListView from '../ListView/ListView';
+import { createBoss } from '../../actions/bossActions';
+import bossService from '../../services/bossService';
+import { connect } from 'react-redux';
 
 class Bosses extends React.Component {
     constructor(props) {
@@ -44,6 +46,16 @@ class Bosses extends React.Component {
     };
     onFormSubmit(e) {
         e.preventDefault();
+        console.log(this.state.fields);
+        if(this.validateForm()) {
+            const newBoss = {
+                name: this.state.fields.name,
+                description: this.state.fields.description,
+                img: this.state.fields.url
+            }
+            this.props.createBoss(newBoss);
+            //bossService.createBoss(newBoss);
+        }
 
         // Dispatch action
         const { name, description, url } = this.state;
@@ -94,10 +106,4 @@ class Bosses extends React.Component {
     };
 };
 
-const mapStateToProps = reduxStoreState => {
-    return {
-
-    };
-};
-
-export default connect(mapStateToProps)(Bosses);
+export default connect(null, { createBoss })(Bosses);

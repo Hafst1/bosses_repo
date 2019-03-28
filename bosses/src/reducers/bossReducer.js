@@ -1,4 +1,4 @@
-import { GET_BOSSES } from '../constants';
+import { GET_BOSSES, CREATE_BOSS } from '../constants';
 
 // const initialState = {
 //     name: '',
@@ -16,6 +16,7 @@ import { GET_BOSSES } from '../constants';
 export default function(state = [], action) {
     switch (action.type) {
         case GET_BOSSES: return action.payload;
+        case CREATE_BOSS: return state.push(action.payload);
         default: return state;
     };
 };
